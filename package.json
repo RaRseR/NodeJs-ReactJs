@@ -1,0 +1,28 @@
+{
+  "name": "nodejsstartapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaRseR/NodeJsStartApp.git"
+  },
+  "author": "RaRseR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaRseR/NodeJsStartApp/issues"
+  },
+  "homepage": "https://github.com/RaRseR/NodeJsStartApp#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
