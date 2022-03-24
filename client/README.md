@@ -1,3 +1,11 @@
+# commands
+
+npm start - для запуска сервера
+
+npm --prefix ./client run build - для запуска билда из корневой
+npm run build - для запуска билда из клиентской папки
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
