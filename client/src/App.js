@@ -1,15 +1,21 @@
-import React ,{Fragment} from 'react';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
-import Test from "./Components/Test";
+import Header from "./Components/Header";
+import SwitchController from "./Components/SwitchController";
 
 function App() {
   return (
-    <Fragment>
-      <Test/>
-    </Fragment>
+    <Router>
+      <Header />
+      <SwitchController/>
+    </Router>
   );
 }
 
