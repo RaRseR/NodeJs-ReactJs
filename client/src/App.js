@@ -1,22 +1,18 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router} from "react-router-dom";
 
 // import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 import Header from "./Components/Header";
-import SwitchController from "./Components/SwitchController";
+import PagesSwitch from "./PagesSwitch";
 
 function App() {
-  return (
-    <Router>
-      <Header />
-      <SwitchController/>
-    </Router>
-  );
+    return (
+        <Router>
+            <Header />
+            <PagesSwitch />
+        </Router>
+    );
 }
 
 export default App;
