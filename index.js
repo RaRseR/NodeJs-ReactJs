@@ -1,20 +1,28 @@
-// Основные модули и константы ------------------------------------------------------------------
+// Main modules 
 const express = require("express"),
     app = express(),
     path = require('path'),
     http = require("http"),
+    mysql = require("mysql"),
     port = process.env.PORT || 3001;
 
-//  Настройки сервера ---------------------------------------------------------------------------
+//  Server settings 
 app.set("port", port);
 
-// Пути до папок --------------------------------------------------------------------------------
+exports.connection = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'root',
+    database: 'NodeJs'
+});
+
+// Used folders
 app.use(express.static(path.join(__dirname, "client/build")));
 
-//  Роутинг -------------------------------------------------------------------------------------
+//  Routes
 require("./routes")(app);
 
-// Запуск сервера -------------------------------------------------------------------------------
+// Server start
 http.createServer(app).listen(app.get("port"), function() {
     console.log("Express server listening on port " + app.get("port"));
 });

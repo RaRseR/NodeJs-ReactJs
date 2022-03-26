@@ -3,9 +3,8 @@ import axios from "axios";
 
 export default function Home() {
     const [data, setData] = useState({
-        id: 1,
-        count: 10,
-        name: "TEST",
+        id: 10,
+        content: "TEST",
     });
 
     async function send() {
@@ -14,7 +13,7 @@ export default function Home() {
             params: data,
         })
             .then((response) => {
-                setData(response.data.newData);
+                setData(response.data.data);
             })
             .catch((error) => {
                 console.log(error.message);
@@ -23,8 +22,9 @@ export default function Home() {
 
     return (
         <div className="wrapper">
-            <button onClick={() => send()}>SEND</button>
-            <h1>{data.name}</h1>
+            <button onClick={() => send()}> SEND </button>
+            <h1> {data.id} </h1>
+            <h1> {data.content} </h1>
         </div>
     );
 }
