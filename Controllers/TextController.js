@@ -1,9 +1,17 @@
-const DB = require('../index').connection;
+const DB = require('../database').connection;
 
-exports.sendData = function(req, res) {
+
+
+exports.lastData = function(req, res) {
     DB.query('SELECT * FROM texts', function(error, results) {
         if (error) throw error;
-        console.log(results[0]);
         res.json({ data: { id: results[0].id, content: results[0].content } });
+    });
+}
+
+exports.addData = function(req, res) {
+    DB.query(`INSERT INTO texts (content) VALUES ('${req.query.content}');`, function(error, results) {
+        if (error) throw error;
+        res.json({ data: { id: results.insertId, content: req.query.content } });
     });
 }

@@ -3,18 +3,11 @@ const express = require("express"),
     app = express(),
     path = require('path'),
     http = require("http"),
-    mysql = require("mysql"),
+
     port = process.env.PORT || 3001;
 
 //  Server settings 
 app.set("port", port);
-
-exports.connection = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'root',
-    database: 'NodeJs'
-});
 
 // Used folders
 app.use(express.static(path.join(__dirname, "client/build")));
